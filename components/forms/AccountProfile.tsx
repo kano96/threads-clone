@@ -79,9 +79,9 @@ function AccountProfile({ user, bntTitle }: Props) {
     if (hasImageChange) {
       const imgRes = await startUpload(files);
 
-      if (imgRes && imgRes[0].fileUrl) {
-        const { fileUrl } = imgRes[0];
-        values.profile_photo = fileUrl;
+      if (imgRes && imgRes[0].url) {
+        const { url } = imgRes[0];
+        values.profile_photo = url;
       }
     }
 
