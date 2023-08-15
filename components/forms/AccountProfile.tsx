@@ -10,6 +10,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -157,6 +158,7 @@ function AccountProfile({ user, bntTitle }: Props) {
               <FormControl>
                 <Input className="account-form_input" {...field} type="text" />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -172,6 +174,7 @@ function AccountProfile({ user, bntTitle }: Props) {
               <FormControl>
                 <Input className="account-form_input" {...field} type="text" />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -190,6 +193,7 @@ function AccountProfile({ user, bntTitle }: Props) {
                   rows={10}
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
