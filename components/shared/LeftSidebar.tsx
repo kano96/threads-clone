@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { SignedIn, SignOutButton } from "@clerk/nextjs";
 
-function LeftSidebar() {
+function LeftSidebar({ userId }: { userId: string | undefined }) {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -16,9 +16,14 @@ function LeftSidebar() {
           const isActive =
             (pathname.includes(link.route) && link.route.length > 1) ||
             pathname === link.route;
+
+          const route =
+            link.route === "/profile"
+              ? `/profile/${JSON.parse(userId!)}`
+              : link.route;
           return (
             <Link
-              href={link.route}
+              href={route}
               key={link.label}
               className={`leftsidebar_link ${isActive && "bg-primary-500"}`}
             >
