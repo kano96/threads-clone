@@ -5,6 +5,8 @@ import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import Comment from "@/components/forms/Comment";
 
+export const revalidate = 0;
+
 async function Page({ params }: { params: { id: string } }) {
   if (!params.id) {
     return null;

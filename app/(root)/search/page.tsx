@@ -1,3 +1,4 @@
+import UserCard from "@/components/cards/UserCard";
 import { fetchUser, fetchUsers } from "@/lib/actions/user.actions";
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
@@ -25,7 +26,14 @@ async function Page() {
         ) : (
           <>
             {result.users.map((person) => (
-              <p className="text-white">{person.name}</p>
+              <UserCard
+                key={person.id}
+                id={person.id}
+                name={person.name}
+                username={person.username}
+                imgUrl={person.image}
+                personType="User"
+              />
             ))}
           </>
         )}
