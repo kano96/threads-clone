@@ -52,6 +52,7 @@ async function Page({ params }: { params: { id: string } }) {
               currentUserId={user.id}
               accountId={communityDetails._id}
               accountType="Community"
+              community={communityDetails}
             />
           </TabsContent>
           <TabsContent value="members" className="w-full text-light-1">

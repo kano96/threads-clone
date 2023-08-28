@@ -7,10 +7,18 @@ interface Props {
   currentUserId: string;
   accountId: string;
   accountType: string;
+  community?: any;
 }
 
-async function ThreadsTab({ currentUserId, accountId, accountType }: Props) {
+async function ThreadsTab({
+  currentUserId,
+  accountId,
+  accountType,
+  community,
+}: Props) {
   let result: any;
+
+  console.log(community);
 
   if (accountType === "Community") {
     result = await fetchCommunityPosts(accountId);
@@ -40,7 +48,7 @@ async function ThreadsTab({ currentUserId, accountId, accountType }: Props) {
                 }
           }
           content={thread.text}
-          community={thread.community}
+          community={community}
           createdAt={thread.createdAt}
           comments={thread.comments}
         />

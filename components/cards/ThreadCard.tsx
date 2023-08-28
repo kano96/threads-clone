@@ -121,13 +121,14 @@ function ThreadCard({
           <p className="text-subtle-medium text-gray-1">
             {formatDateString(createdAt)} - {community.name} Community
           </p>
-          <Image
-            src={community.image}
-            alt="Community image"
-            width={14}
-            height={14}
-            className="ml-1 rounded-full object-cover"
-          />
+          <div className="ml-1 relative h-7 w-7 object-cover">
+            <Image
+              src={community.image}
+              alt="Community image"
+              fill
+              className="rounded-full object-cover shadow-2xl"
+            />
+          </div>
         </Link>
       )}
     </article>
